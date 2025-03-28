@@ -1,1 +1,110 @@
 @charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-size: 16px;
+    background-color: black;
+    color: white;
+}
+
+header {
+    width: 70vw;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 600px;
+    gap: 50px;
+    z-index: 2;
+
+    & img {
+        width: 250px;
+    }
+
+    & nav {
+        & ul {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+        }
+    }
+}
+
+section {
+    background-image: radial-gradient(rgb(21, 21, 131), rgb(19, 19, 19));
+    height: 100vh;
+    position: relative;
+
+    & .list {
+        width: 70vw;
+        height: 100%;
+        margin: auto;
+        position: relative;
+    }
+    & .item {
+        position: absolute;
+        inset: 0;
+
+        & .img-car {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 70%;
+
+            & img {
+                width: 100%;
+                transform: rotate(-25deg);
+            }
+        }
+
+        & .content {
+            position: absolute;
+            right: 100px;
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: end;
+            gap: 20px;
+
+            & .info-car {
+                font-weight: bold;
+            }
+
+            & h2 {
+                font-size: 5em;
+                line-height: 1em;
+            }
+
+            & .desci {
+                color: white;
+                font-size: 12px;
+                text-align: right;
+                max-width: 400px;
+            }
+
+            & .information {
+                border-radius: 15px;
+                height: 40px;
+                width: 150px;
+                text-transform: uppercase;
+                background-color: ;
+            }
+        }
+    }
+}
+
+.arrow {
+    & button {
+        & img {
+            width: 100px;
+        }
+    }
+}

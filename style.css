@@ -5,6 +5,8 @@
     margin: 0px;
     box-sizing: border-box;
     list-style: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
 }
 
 body {
@@ -46,65 +48,193 @@ section {
         height: 100%;
         margin: auto;
         position: relative;
-    }
-    & .item {
-        position: absolute;
-        inset: 0;
 
-        & .img-car {
+
+        & .item {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 70%;
-
-            & img {
-                width: 100%;
-                transform: rotate(-25deg);
+            inset: 0;
+            
+            & .img-car {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 70%;
+                
+                & img {
+                    width: 100%;
+                    transform: rotate(-25deg);
+                }
+            }
+            
+            & .content {
+                position: absolute;
+                right: 100px;
+                width: 70%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: end;
+                gap: 20px;
+                
+                & .info-car {
+                    font-weight: bold;
+                    margin-top: 100px;
+                }
+                
+                & h2 {
+                    font-size: 5em;
+                    line-height: 1em;
+                    margin-top: 5px;
+                }
+                
+                & .descri {
+                    color: white;
+                    font-size: 15px;
+                    text-align: left;
+                    max-width: 500px;
+                    margin-top: 15px;
+                }
+                
+                & .information {
+                    border-radius: 15px;
+                    height: 50px;
+                    width: 150px;
+                    text-transform: uppercase;
+                    border: 2px solid red;
+                    background-color: blue;
+                    color: black;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
             }
         }
 
-        & .content {
+        &::before {
+            content: '';
             position: absolute;
-            right: 100px;
-            width: 70%;
-            height: 100%;
+            width: 99%;
+            top: 50%;
+            border: 1px solid white;
+        }
+        
+    }
+    .arrow {
+        display: flex;
+        width: 70vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -25px);
+        justify-content: space-between;
+
+        & .left {
+            transform: scale(-1);
+        }
+
+        & button {
+            width: 50px;
+            height: 50px;
+            top: 60%;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+
+            & img {
+                width: 30px;
+                margin-top: 4px;
+                cursor: pointer;
+        }
+
+        &:hover {
+            background-color: blue;
+            transition: 0.5s;
+        }
+    }
+}
+    .indic {
+        display: flex;
+        height: 200px;
+        width: 90vw;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        justify-content: end;
+        gap: 15px;
+
+        & .number {
+            font-size: 5em;
+        }
+
+        & ul {
             display: flex;
-            flex-direction: column;
-            justify-content: end;
-            align-items: end;
-            gap: 20px;
+            gap: 10px;
 
-            & .info-car {
-                font-weight: bold;
+            & li {
+                width: 50px;
+                height: 5px;
+                background-color: blue;
+                border-radius: 3px;
+                transition: 0.5s;
             }
-
-            & h2 {
-                font-size: 5em;
-                line-height: 1em;
-            }
-
-            & .desci {
-                color: white;
-                font-size: 12px;
-                text-align: right;
-                max-width: 400px;
-            }
-
-            & .information {
-                border-radius: 15px;
-                height: 40px;
-                width: 150px;
-                text-transform: uppercase;
-                background-color: ;
-            }
+        }
+        
+        & .active {
+            background-color: white;
         }
     }
 }
 
-.arrow {
-    & button {
-        & img {
-            width: 100px;
+section {
+
+    & .list {
+
+        & .item {
+            transform: translateX(100vw);
+            transition: 0.5s;
+            opacity: 0;
+
+            &  .img-car {
+                & img {
+                    transform: rotate(0deg);
+                    transition: 0.5s;
+                    transition-delay: 0.3s;
+                }
+            }
+            & .content {
+                & .info-car, h2, .descri, .information {
+                    transform: translateX(200px);
+                    transition: 0.7s;
+                    transition-delay: 0.3s;
+                    }
+                & h2 {
+                    transition-delay: 0.5s;
+                    }
+                & .descri {
+                    transition-delay: 0.7s;
+                    }
+                & .information {
+                    transition-delay: 0.9s;
+                }
+            }
+        }
+        & .active {
+            transform: translateX(0);
+            transition: 0.5s;
+            opacity: 1;
+
+            &  .img-car {
+                & img {
+                    transform: rotate(-20deg);
+                }
+            }   
+            & .content {
+                & .info-car, h2, .descri, .information {
+                    transform: translateX(0);
+                }
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ body {
     font-size: 16px;
     background-color: black;
     color: white;
+    overflow: hidden;
 }
 
 header {
@@ -61,8 +62,19 @@ section {
                 width: 70%;
                 
                 & img {
-                    width: 100%;
+                    width: 85%;
                     transform: rotate(-25deg);
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-color: black;
+                    width: 80%;
+                    height: 100px;
+                    top: 150%;
+                    left: 50px;
+                    border-radius: 50%;
+                    filter: blur(50px);
                 }
             }
             
@@ -79,31 +91,30 @@ section {
                 
                 & .info-car {
                     font-weight: bold;
-                    margin-top: 100px;
+                    margin-top: 20px;
                 }
                 
                 & h2 {
                     font-size: 5em;
-                    line-height: 1em;
-                    margin-top: 5px;
+                    margin-top: 25px;
                 }
                 
                 & .descri {
                     color: white;
                     font-size: 15px;
                     text-align: left;
-                    max-width: 500px;
-                    margin-top: 15px;
+                    max-width: 400px;
+                    margin-top: 20px;
                 }
                 
                 & .information {
-                    border-radius: 15px;
+                    border-radius: 30px;
                     height: 50px;
-                    width: 150px;
+                    width: 160px;
                     text-transform: uppercase;
-                    border: 2px solid red;
-                    background-color: blue;
-                    color: black;
+                    border: 2px solid rgba(0, 0, 0, 0.514);
+                    background-color: rgb(21, 21, 131);
+                    color: white;
                     cursor: pointer;
                     font-weight: bold;
                 }
@@ -190,9 +201,10 @@ section {
 section {
 
     & .list {
+        --calculation: 1;
 
         & .item {
-            transform: translateX(100vw);
+            transform: translateX(calc(100vw * var(--calculation)));
             transition: 0.5s;
             opacity: 0;
 
@@ -205,7 +217,7 @@ section {
             }
             & .content {
                 & .info-car, h2, .descri, .information {
-                    transform: translateX(200px);
+                    transform: translateX(calc(200px * var(--calculation)));
                     transition: 0.7s;
                     transition-delay: 0.3s;
                     }
